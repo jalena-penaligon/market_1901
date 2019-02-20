@@ -41,6 +41,7 @@ class Market
     vendors.each do |vendor|
       if count <= vendor.inventory[item]
         vendor.inventory[item] -= count
+        count = 0
       elsif count >= vendor.inventory[item]
         count = count - vendor.inventory[item]
         vendor.inventory[item] = 0
